@@ -8,53 +8,39 @@ import cuatro from './assets/img/cuatro.jpg'
 import cinco from './assets/img/cinco.jpg'
 import seis from './assets/img/seis.jpg'
 import Hero from './components/Hero'
+import Website from './components/Website'
+import Content from './components/Content'
+import Cajas from './components/Cajas'
 
 function App () {
   return (
 
     <>
-      <Hero />
-      <section className='wave-contenedor website'>
-        <img src={ilustracion1} alt='' />
-        <div className='contenedor-textos-main'>
-          <h2 className='titulo left'>Title of section</h2>
-          <p className='parrafo'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt enim reiciendis
-            molestias nam tempore. Ullam hic accusantium eligendi ipsam corrupti!
-          </p>
-          <a href='' className='cta'>Learn more</a>
-        </div>
-      </section>
-
-      <section className='info'>
-        <div className='contenedor'>
-          <h2 className='titulo left'>Juntos podemos apoyar</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-      </section>
-
-      <section className='cards contenedor'>
-        <h2 className='titulo'>Our services</h2>
-        <div className='content-cards'>
-          <article className='card'>
-            <i className='far fa-clone' />
-            <h3>Title Card</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <a href='' className='cta'>Learn more</a>
-          </article>
-          <article className='card'>
-            <i className='fas fa-database' />
-            <h3>Title Card</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <a href='' className='cta'>Learn more</a>
-          </article>
-          <article className='card'>
-            <i className='far fa-object-group' />
-            <h3>Title Card</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <a href='' className='cta'>Learn more</a>
-          </article>
-        </div>
-      </section>
+      <Hero
+        title='Bienvenidos Delfines'
+        subtitle='estamos aprendiendo props de recat'
+        buttonText='conoce mas de la paginita'
+        buttonLink=''
+      />
+      <Website
+        title='OTRO TITULO MAS'
+        description='LO QUE SE PUEDA DECRIBIR'
+        butonText='picale al boton'
+        butonLink='https://www.unacar.mx'
+      />
+      <Content
+        dato='Quienes son delfines'
+        parrafo='Los del fines son todos aquellos estudiantes de la Universidad Autónoma del Carmen'
+      />
+      <Cajas
+        titlecaja='servicios de la unacar'
+        correo='Correo'
+        descorreo='en esta pagina podras entrar a tu correo'
+        kardex='pagina del kardex'
+        deskardex='aqui podras ir a checar tu kardex, calificaciones y mas.'
+        contactos='contactos de la escuela'
+        descontacto='contactate con nosotros'
+      />
 
       <section className='galeria'>
         <div className='contenedor'>
