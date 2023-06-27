@@ -1,27 +1,39 @@
 import React, { useState } from 'react'
+import ToDoItem from './ToDoItem'
 
 const ToDoList = () => {
-  const { inputValue, setImputValue } = useState('')
+  const [inputValue, setInputValue] = useState('')
+  const [todos, setTodos] = useState([])
+
   const handleAdd = () => {
-    console.log('agregue', inputValue)
+    const newTodos = [...todos, inputValue]
+    setTodos(newTodos)
+    setInputValue('')
+  }
+  const handleDelete = (index) => {
+    setTodos(todos.filter((todo, i) => i !== index))
   }
   return (
     <div>
-      <h1>Lista de tareas<h1 />
+      <h1>Lista de tareas </h1>
 
-        <input
-          type='text'
-          value={(inputValue)}
-          onChange={(event) => setImputValue(event.target.value)}
-        />
-        <button>Agregar  </button>
-        <ul>
-          <li>Item 1 <button>Eliminar</button></li>
-          <li>Item 2 <button>Eliminar</button></li>
-          <li>Item 3 <button>Eliminar</button></li>
+      <input
+        type='text'
+        value={inputValue}
+        onChange={(event) => setInputValue(event.target.value)}
+      />
+      <button onClick={handleAdd}> Agregar  </button>
+      <ul>
+        {todos.map((todo, index) => (
+          <ToDoItem
+            key={index}
+            todo={todo}
+            handleDelete={() => handleDelete(index)}
+          />
 
-        </ul>
-      </h1>
+        ))}
+
+      </ul>
 
     </div>
   )
